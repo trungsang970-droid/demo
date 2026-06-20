@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRUNGSANG X SUPPORT</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#000,#001a40,#003366);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.box{
+    width:360px;
+    background:rgba(0,0,0,.75);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 25px #00ffff;
+    text-align:center;
+}
+
+h1{
+    color:#00ffff;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00ff88;
+    font-weight:bold;
+}
+
+#loading,
+#panel{
+    display:none;
+}
+
+.card{
+    background:#111;
+    border:1px solid #00ffff;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>⚡ TRUNGSANG X SUPPORT ⚡</h1>
+
+<div id="start">
+
+<p>Hệ thống mô phỏng hỗ trợ tài khoản</p>
+
+<input 
+id="name"
+placeholder="Nhập tên nhân vật">
+
+<button onclick="verify()">
+BẮT ĐẦU XÁC MINH
+</button>
+
+</div>
+
+
+<div id="loading">
+
+<h3>
+🔍 Đang quét dữ liệu...
+</h3>
+
+<p>
+Vui lòng chờ trong giây lát...
+</p>
+
+</div>
+
+
+<div id="panel">
+
+<h2>
+✅ XÁC MINH THÀNH CÔNG
+</h2>
+
+<div class="card">
+Tên nhân vật:<br>
+<b id="player"></b>
+</div>
+
+<div class="card">
+Mã yêu cầu:<br>
+<b id="code"></b>
+</div>
+
+<div class="card">
+Khu vực quản lý tài khoản (DEMO)<br><br>
+
+📱 Số điện thoại liên kết: 09xxxxxxx<br><br>
+
+📧 Email liên hệ: abc****@gmail.com<br><br>
+
+🔑 Thao tác mô phỏng:<br>
+
+<button>
+ĐỔI MẬT KHẨU (DEMO)
+</button>
+
+<br><br>
+
+<button>
+CẬP NHẬT EMAIL (DEMO)
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function verify(){
+
+let name=document.getElementById("name").value;
+
+if(name==""){
+alert("Vui lòng nhập tên nhân vật");
+return;
+}
+
+document.getElementById("start").style.display="none";
+
+document.getElementById("loading").style.display="block";
+
+
+let time=Math.floor(Math.random()*9000)+1000;
+
+
+setTimeout(()=>{
+
+document.getElementById("loading").style.display="none";
+
+document.getElementById("panel").style.display="block";
+
+document.getElementById("player").innerText=name;
+
+
+let code=
+"TSX-"+Math.floor(
+100000+Math.random()*900000
+);
+
+document.getElementById("code").innerText=code;
+
+
+},time);
+
+}
+
+</script>
+
+</body>
+
+</html>
